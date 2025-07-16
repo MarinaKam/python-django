@@ -6,7 +6,7 @@ from .constants import BOOKS_DETAILS_PAGE
 
 
 def index(request):
-    books = Book.objects.all()
+    books = Book.objects.all().order_by('title')
     num_books = books.count()
     avg_rating = books.aggregate(Avg('rating'))['rating__avg']
 
