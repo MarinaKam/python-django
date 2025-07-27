@@ -26,3 +26,10 @@ button:active {
   background-color: #830443;
   border-color: #830443;
 }
+
+img {
+  width: 200px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}

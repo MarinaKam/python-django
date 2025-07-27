@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+	Your Review
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'profiles/index.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+        <ul>
+            {% for profile in profiles %}
+                <li>
+                    <img src="{{ profile.image.url }}" alt="{{ profile.image.url }}">
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
