@@ -16,6 +16,10 @@
     <div class="container">
       <header id="main-navigation">
         <h1><a href="{% url "starting-page" %}">Reviews Form</a></h1>
+
+        <nav>
+          <a href="{% url "reviews-page" %}">All Reviews</a>
+        </nav>
       </header>
 
         {% block content %}
