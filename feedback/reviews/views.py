@@ -1,20 +1,15 @@
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
-from django.views import View
 from django.views.generic.base import TemplateView
-from django.views.generic import ListView, DetailView, FormView
+from django.views.generic.edit import CreateView
+from django.views.generic import ListView, DetailView
 
 from .forms import ReviewForm
 from .models import Review
 
-class ReviewView(FormView):
-   template_name = "reviews/review.html"
+class ReviewView(CreateView):
+   model = Review
    form_class = ReviewForm
+   template_name = "reviews/review.html"
    success_url = "/submit"
-
-   def form_valid(self, form):
-      form.save()
-      return super().form_valid(form)
 
 
 class SubmitView(TemplateView):
@@ -31,12 +26,12 @@ class ReviewList(ListView):
    model = Review
    context_object_name = "reviews"
 
-   # def get_queryset(self):
-   #    base_query = super().get_queryset()
-   #    data = base_query.filter(rating__gte=1).order_by(
-   #       "-rating"
-   #    )
-   #    return data
+   def get_queryset(self):
+      base_query = super().get_queryset()
+      data = base_query.filter(rating__gte=1).order_by(
+         "-rating"
+      )
+      return data
 
 class ReviewDetail(DetailView):
    template_name = "reviews/review_item.html"
