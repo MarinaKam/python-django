@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+	Your Review
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'profiles/index.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+        <form method="post" enctype="multipart/form-data" action="/profiles/">
+            {% csrf_token %}
+
+            {{ form }}
+
+            <button>Upload!</button>
+        </form>
+    </div>
+{% endblock %}
