@@ -1,3 +1,14 @@
 from django.contrib import admin
+from .models import Post, Author, Tag
 
 # Register your models here.
+
+class PostAdmin(admin.ModelAdmin):
+    list_filter = ('title', 'author', 'tags', 'date')
+    list_display = ('title', 'date', 'author')
+    readonly_fields = ('slug',)
+
+
+admin.site.register(Post, PostAdmin)
+admin.site.register(Author)
+admin.site.register(Tag)

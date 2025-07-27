@@ -8,8 +8,9 @@ html {
   font-family: 'Open Sans', 'Lato', sans-serif;
 }
 
-body {
+html, body {
   margin: 0;
+  padding: 0;
 }
 
 h1,
