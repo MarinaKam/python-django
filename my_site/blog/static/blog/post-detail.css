@@ -22,6 +22,7 @@ body {
 #summary h2 {
   color: white;
   font-size: 4.5rem;
+  margin-bottom: 0.5rem;
 }
 
 #summary article {
@@ -47,8 +48,25 @@ body {
   font-weight: bold;
 }
 
+#summary a {
+  color: white;
+  text-decoration: none;
+}
+
 #summary time {
   font-weight: bold;
+}
+
+.tags {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.tag {
+  padding: 0.25rem 1rem;
+  border-radius: 8px;
+  background-color: white;
+  color: #390281;
 }
 
 main {
