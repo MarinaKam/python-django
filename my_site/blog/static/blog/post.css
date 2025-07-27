@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  height: 100%;
 }
 
 .post a {
@@ -14,6 +15,8 @@
 
 .post a:hover,
 .post a:active {
+  height: 100%;
+  border-radius: 12px;
   transform: scale(1.1);
   background-color: #390281;
   color: white;
