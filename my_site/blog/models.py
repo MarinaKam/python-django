@@ -5,7 +5,6 @@ from django.utils.text import slugify
 
 from blog.constants import POSTS_DETAILS_PAGE
 
-# Create your models here.
 class Tag(models.Model):
     caption = models.CharField(max_length=20)
 

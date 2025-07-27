@@ -1,5 +1,3 @@
-from datetime import date
-
 from django.shortcuts import render
 from .models import Post
 
